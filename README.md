@@ -13,3 +13,7 @@ While you're more than welcome to use the rules in our version of the project, y
 We currently use it in Chrome through a bookmarklet. To use our rules, add a bookmark and set the name to 'FA transaction explainer' (or similar) and set the URL to `javascript:var s = document.createElement('script'); s.setAttribute('src', 'https://raw.github.com/freerange/free_agent_transaction_explainer/master/freeagent-transaction-helper.js'); document.body.appendChild(s);`
 
 With the bookmarklet added, you should be able to view an unexplained transaction in FreeAgent and (assuming you've got rules that match the transaction) you'll see the form completed automatically.
+
+## What's it look like?
+
+[Check out the 5 second movie demo](https://docs.google.com/a/gofreerange.com/file/d/0Byppog2awIncRjVnd2M4THlzMVU/edit)
