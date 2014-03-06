@@ -38,7 +38,8 @@
 
   var rules = [
     ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software'],
-    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software']
+    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software'],
+    ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting']
   ]
 
   var tryToExplainTransaction = function() {
