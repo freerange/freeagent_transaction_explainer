@@ -17,3 +17,13 @@ With the bookmarklet added, you should be able to view an unexplained transactio
 ## What's it look like?
 
 [Check out the 5 second movie demo](https://docs.google.com/a/gofreerange.com/file/d/0Byppog2awIncRjVnd2M4THlzMVU/edit)
+
+## Why isn't it a...?
+
+### Userscript
+
+I don't really understand how Userscripts work in Chrome (my primary browser). They don't seem to be able to use jQuery that's loaded in the FreeAgent site, and it was proving really hard to load jQuery in the userscript directly. I could've replaced my use of jQuery with plain old JavaScript, but I suspect that would've made it harder to continue working on this script.
+
+### Chrome extension
+
+While it'd be nice to have the script execute on page load (rather than through a bookmarklet), I didn't feel that the additional overhead of learning how to create a Chrome extension was worth it.
