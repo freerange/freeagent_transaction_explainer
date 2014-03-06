@@ -27,3 +27,7 @@ I don't really understand how Userscripts work in Chrome (my primary browser). T
 ### Chrome extension
 
 While it'd be nice to have the script execute on page load (rather than through a bookmarklet), I didn't feel that the additional overhead of learning how to create a Chrome extension was worth it.
+
+## Known limitations
+
+There's a problem with the javascript being hosted on raw.github.com. It would appear that the bookmarklet doesn't get the latest version of the script until you've requested the raw script manually (i.e. by visiting it in a browser). I presume this is because of some caching somewhere along the line.
