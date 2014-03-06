@@ -37,9 +37,10 @@
   }
 
   var rules = [
-    ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software'],
-    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software'],
-    ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting']
+    ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software', true],
+    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true],
+    ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true],
+    ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false]
   ]
 
   var tryToExplainTransaction = function() {
@@ -51,14 +52,18 @@
         var description = rule[1];
         var vat = rule[2];
         var category = rule[3];
+        var shouldHaveAttachment = rule[4];
 
         console.log('Testing: ' + textToMatch);
         if (unexplainedTransactionText.match(textToMatch)) {
           console.log('Found: ' + description);
+
           setVAT(vat);
           setCategory(category);
           setDescription(description);
-          promptForAnAttachment();
+          if (shouldHaveAttachment) {
+            promptForAnAttachment();
+          };
 
           return false; // We don't need to continue having found a match
         };
