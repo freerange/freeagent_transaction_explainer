@@ -40,7 +40,8 @@
     ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software', true],
     ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true],
     ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true],
-    ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false]
+    ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false],
+    ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false]
   ]
 
   var tryToExplainTransaction = function() {
