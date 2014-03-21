@@ -41,7 +41,8 @@
     ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true],
     ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true],
     ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false],
-    ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false]
+    ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false],
+    ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false]
   ]
 
   var tryToExplainTransaction = function() {
