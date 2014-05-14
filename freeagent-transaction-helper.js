@@ -16,6 +16,18 @@
     highlight(selector);
   };
 
+  var setEcStatus = function(value) {
+    var ecStatusOptions = {
+      'Non-EC': '#bank_account_entry_ec_status_',
+      'EC Goods': '#bank_account_entry_ec_status_2',
+      'EC Services': '#bank_account_entry_ec_status_1'
+    };
+
+    var ecStatusSelector = ecStatusOptions[value];
+    $(ecStatusSelector).prop('checked', true);
+    highlight('#ec_status_options');
+  };
+
   var setCategory = function(value) {
     var selector = $('#other_payment_type');
     selectOption(selector, value);
@@ -37,13 +49,13 @@
   }
 
   var rules = [
-    ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software', true],
-    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true],
-    ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true],
-    ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false],
-    ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false],
-    ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false],
-    ['SVCSAPPS_G', 'Google Apps for Business', '0', 'Computer Software', true]
+    ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software', true, 'Non-EC'],
+    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true, 'Non-EC'],
+    ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true, 'Non-EC'],
+    ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
+    ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false, 'Non-EC'],
+    ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
+    ['SVCSAPPS_G', 'Google Apps for Business', '0', 'Computer Software', true, 'EC Services']
   ]
 
   var tryToExplainTransaction = function() {
@@ -56,12 +68,14 @@
         var vat = rule[2];
         var category = rule[3];
         var shouldHaveAttachment = rule[4];
+        var ecStatus = rule[5];
 
         console.log('Testing: ' + textToMatch);
         if (unexplainedTransactionText.match(textToMatch)) {
           console.log('Found: ' + description);
 
           setVAT(vat);
+          setEcStatus(ecStatus);
           setCategory(category);
           setDescription(description);
           if (shouldHaveAttachment) {
