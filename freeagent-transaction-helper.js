@@ -42,7 +42,8 @@
     ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true],
     ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false],
     ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false],
-    ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false]
+    ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false],
+    ['SVCSAPPS_G', 'Google Apps for Business', '0', 'Computer Software', true]
   ]
 
   var tryToExplainTransaction = function() {
