@@ -14,6 +14,14 @@ We currently use it in Chrome through a bookmarklet. To use our rules, add a boo
 
 With the bookmarklet added, you should be able to view an unexplained transaction in FreeAgent and (assuming you've got rules that match the transaction) you'll see the form completed automatically.
 
+### Note
+
+You might see the following error JavaScript in Chrome:
+
+    Refused to execute script from 'https://raw.github.com/freerange/free_agent_transaction_explainer/master/freeagent-transaction-helper.js' because its MIME type ('text/plain') is not executable, and strict MIME type checking is enabled.
+
+You can fix the problem by changing the domain in the URL from `raw.github.com` to `rawgithub.com`.
+
 ## What's it look like?
 
 [Check out the 5 second movie demo](https://docs.google.com/a/gofreerange.com/file/d/0Byppog2awIncRjVnd2M4THlzMVU/edit)
