@@ -29,7 +29,7 @@
   };
 
   var setCategory = function(value) {
-    var selector = $('#other_payment_type');
+    var selector = $('#spending_category');
     selectOption(selector, value);
     highlight(selector);
   };
