@@ -20,7 +20,7 @@ You might see the following error JavaScript in Chrome:
 
     Refused to execute script from 'https://raw.github.com/freerange/free_agent_transaction_explainer/master/freeagent-transaction-helper.js' because its MIME type ('text/plain') is not executable, and strict MIME type checking is enabled.
 
-You can fix the problem by changing the domain in the URL from `raw.github.com` to `rawgithub.com`.
+You can fix the problem by changing the domain in the URL from `raw.github.com` to `rawgit.com`.
 
 ## What's it look like?
 
