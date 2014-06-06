@@ -35,7 +35,7 @@
   };
 
   var setDescription = function(value) {
-    var selector = '#bank_account_entry_description';
+    var selector = '#description';
     var descriptionField = $(selector);
     descriptionField.val(value);
     highlight(selector);
