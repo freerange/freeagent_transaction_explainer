@@ -56,7 +56,8 @@
     ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false, 'Non-EC'],
     ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
     ['SVCSAPPS_G', 'Google Apps for Business', '0', 'Computer Software', true, 'EC Services'],
-    ['HARMONIA.IO', 'Harmonia - Monthly subscription', '0', 'Computer Software', true, 'Non-EC']
+    ['HARMONIA.IO', 'Harmonia - Monthly subscription', '0', 'Computer Software', true, 'Non-EC'],
+    ['SKY DIGITAL', 'Sky Digital - Broadband', '20', 'Internet & Telephone', false, 'Non-EC']
   ]
 
   var tryToExplainTransaction = function() {
