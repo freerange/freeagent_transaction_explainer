@@ -22,6 +22,10 @@ You might see the following error JavaScript in Chrome:
 
 You can fix the problem by changing the domain in the URL from `raw.github.com` to `rawgit.com`.
 
+### Caching
+
+It looks as if `rawgit.com` sets a `Cache-Control: max-age=300` HTTP header and so you may have to wait up to 5 mins for a newly published version to be loaded by the browser.
+
 ## What's it look like?
 
 [Check out the 5 second movie demo](https://docs.google.com/a/gofreerange.com/file/d/0Byppog2awIncRjVnd2M4THlzMVU/edit)
