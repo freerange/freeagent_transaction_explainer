@@ -53,7 +53,7 @@
     ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true, 'Non-EC'],
     ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true, 'Non-EC'],
     ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
-    ['PACT COFFEE', 'Pact Coffee London', '0', 'Sundries', false, 'Non-EC'],
+    ['Pact Coffee', 'Pact Coffee London', '0', 'Sundries', false, 'Non-EC'],
     ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
     ['SVCSAPPS_G', 'Google Apps for Business', '0', 'Computer Software', true, 'EC Services'],
     ['HARMONIA.IO', 'Harmonia - Monthly subscription', '0', 'Computer Software', true, 'Non-EC'],
