@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "FreeAgent Transaction Explainer",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_icon": "icon.png"
+  },
+
+  "permissions": [
+    "declarativeContent",
+    "https://*.freeagent.com/bank_accounts/*/bank_account_entries/new?bank_transaction_id=*"
+  ]
+}
