@@ -49,7 +49,7 @@
   }
 
   var tryToExplainTransaction = function() {
-    chrome.storage.sync.get({ rulesUrl: '' }, function(items) {
+    chrome.storage.sync.get('rulesUrl', function(items) {
       processRules(items.rulesUrl);
     });
   }
