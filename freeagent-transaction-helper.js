@@ -49,8 +49,9 @@
   }
 
   var tryToExplainTransaction = function() {
-    var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
-    processRules(rulesURL);
+    chrome.storage.sync.get({ rulesUrl: '' }, function(items) {
+      processRules(items.rulesUrl);
+    });
   }
 
   var processRules = function(rulesURL) {
