@@ -48,44 +48,34 @@
     highlight(selector);
   }
 
-  var rules = [
-    { 'textToMatch': 'CAMPFIRE', 'description': '37 Signals - Campfire', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'GITHUB.COM', 'description': 'GitHub - Monthly subscription', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'LINODE.COM', 'description': 'Linode - Monthly subscription - Linode 2048', 'vat': '0', 'category': 'Web Hosting', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'Non-Sterling Transaction Fee', 'description': 'Non Sterling Transaction Fee', 'vat': '0', 'category': 'Bank/Finance Charges', 'shouldHaveAttachment': false, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'Pact Coffee', 'description': 'Pact Coffee London', 'vat': '0', 'category': 'Sundries', 'shouldHaveAttachment': false, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'TOTAL CHARGES TO', 'description': 'HSBC - Monthly account maintenance fee', 'vat': '0', 'category': 'Bank/Finance Charges', 'shouldHaveAttachment': false, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'SVCSAPPS_G', 'description': 'Google Apps for Business', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'EC Services' },
-    { 'textToMatch': 'HARMONIA.IO', 'description': 'Harmonia - Monthly subscription', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
-    { 'textToMatch': 'SKY DIGITAL', 'description': 'Sky Digital - Broadband', 'vat': '20', 'category': 'Internet & Telephone', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' }
-  ]
-
   var tryToExplainTransaction = function() {
     var unexplainedTransactionText = $('.transaction.unexplained').text();
 
     if (unexplainedTransactionText) {
-      $(rules).each(function(index, rule) {
-        var textToMatch = rule['textToMatch'];
-        var description = rule['description'];
-        var vat = rule['vat'];
-        var category = rule['category'];
-        var shouldHaveAttachment = rule['shouldHaveAttachment'];
-        var ecStatus = rule['ecStatus'];
+      $.getJSON(chrome.extension.getURL('/rules.json'), function(rules) {
+        $(rules).each(function(index, rule) {
+          var textToMatch = rule['textToMatch'];
+          var description = rule['description'];
+          var vat = rule['vat'];
+          var category = rule['category'];
+          var shouldHaveAttachment = rule['shouldHaveAttachment'];
+          var ecStatus = rule['ecStatus'];
 
-        console.log('Testing: ' + textToMatch);
-        if (unexplainedTransactionText.match(textToMatch)) {
-          console.log('Found: ' + description);
+          console.log('Testing: ' + textToMatch);
+          if (unexplainedTransactionText.match(textToMatch)) {
+            console.log('Found: ' + description);
 
-          setVAT(vat);
-          setEcStatus(ecStatus);
-          setCategory(category);
-          setDescription(description);
-          if (shouldHaveAttachment) {
-            promptForAnAttachment();
+            setVAT(vat);
+            setEcStatus(ecStatus);
+            setCategory(category);
+            setDescription(description);
+            if (shouldHaveAttachment) {
+              promptForAnAttachment();
+            };
+
+            return false; // We don't need to continue having found a match
           };
-
-          return false; // We don't need to continue having found a match
-        };
+        });
       });
     } else {
       console.log('Ignoring previously explained transactions');
