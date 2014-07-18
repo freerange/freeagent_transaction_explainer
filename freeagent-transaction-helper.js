@@ -60,6 +60,8 @@
       $(rules).each(function(index, rule) {
         return process(rule, unexplainedTransactionText);
       });
+    }).fail(function() {
+      alert("No rules found.\n\nMake sure you've set the rules URL in the extension options to point to some valid JSON.")
     });
   };
 
