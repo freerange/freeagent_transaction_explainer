@@ -58,7 +58,7 @@
     $.getJSON(rulesURL, function(rules) {
       var unexplainedTransactionText = $('.transaction.unexplained').text();
       $(rules).each(function(index, rule) {
-        return process(rule, unexplainedTransactionText);
+        return process(rule, unexplainedTransactionText); // We don't need to continue having found a match
       });
     }).fail(function() {
       alert("No rules found.\n\nMake sure you've set the rules URL in the extension options to point to some valid JSON.")
@@ -78,7 +78,7 @@
         promptForAnAttachment();
       };
 
-      return false; // We don't need to continue having found a match
+      return false;
     };
     return true;
   }
