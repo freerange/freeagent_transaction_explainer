@@ -55,25 +55,30 @@
       var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
       $.getJSON(rulesURL, function(rules) {
         $(rules).each(function(index, rule) {
-          console.log('Testing: ' + rule.textToMatch);
-          if (unexplainedTransactionText.match(rule.textToMatch)) {
-            console.log('Found: ' + rule.description);
-
-            setVAT(rule.vat);
-            setEcStatus(rule.ecStatus);
-            setCategory(rule.category);
-            setDescription(rule.description);
-            if (rule.shouldHaveAttachment) {
-              promptForAnAttachment();
-            };
-
-            return false; // We don't need to continue having found a match
-          };
+          return process(rule, unexplainedTransactionText);
         });
       });
     } else {
       console.log('Ignoring previously explained transactions');
     };
+  }
+
+  var process = function(rule, unexplainedTransactionText) {
+    console.log('Testing: ' + rule.textToMatch);
+    if (unexplainedTransactionText.match(rule.textToMatch)) {
+      console.log('Found: ' + rule.description);
+
+      setVAT(rule.vat);
+      setEcStatus(rule.ecStatus);
+      setCategory(rule.category);
+      setDescription(rule.description);
+      if (rule.shouldHaveAttachment) {
+        promptForAnAttachment();
+      };
+
+      return false; // We don't need to continue having found a match
+    };
+    return true;
   }
 
   tryToExplainTransaction();
