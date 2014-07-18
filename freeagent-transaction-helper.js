@@ -51,16 +51,12 @@
   var tryToExplainTransaction = function() {
     var unexplainedTransactionText = $('.transaction.unexplained').text();
 
-    if (unexplainedTransactionText) {
-      var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
-      $.getJSON(rulesURL, function(rules) {
-        $(rules).each(function(index, rule) {
-          return process(rule, unexplainedTransactionText);
-        });
+    var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
+    $.getJSON(rulesURL, function(rules) {
+      $(rules).each(function(index, rule) {
+        return process(rule, unexplainedTransactionText);
       });
-    } else {
-      console.log('Ignoring previously explained transactions');
-    };
+    });
   }
 
   var process = function(rule, unexplainedTransactionText) {
