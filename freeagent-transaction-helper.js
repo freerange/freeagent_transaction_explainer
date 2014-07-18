@@ -52,7 +52,8 @@
     var unexplainedTransactionText = $('.transaction.unexplained').text();
 
     if (unexplainedTransactionText) {
-      $.getJSON(chrome.extension.getURL('/rules.json'), function(rules) {
+      var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
+      $.getJSON(rulesURL, function(rules) {
         $(rules).each(function(index, rule) {
           var textToMatch = rule['textToMatch'];
           var description = rule['description'];
