@@ -49,15 +49,15 @@
   }
 
   var rules = [
-    ['CAMPFIRE', '37 Signals - Campfire', '0', 'Computer Software', true, 'Non-EC'],
-    ['GITHUB.COM', 'GitHub - Monthly subscription', '0', 'Computer Software', true, 'Non-EC'],
-    ['LINODE.COM', 'Linode - Monthly subscription - Linode 2048', '0', 'Web Hosting', true, 'Non-EC'],
-    ['Non-Sterling Transaction Fee', 'Non Sterling Transaction Fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
-    ['Pact Coffee', 'Pact Coffee London', '0', 'Sundries', false, 'Non-EC'],
-    ['TOTAL CHARGES TO', 'HSBC - Monthly account maintenance fee', '0', 'Bank/Finance Charges', false, 'Non-EC'],
-    ['SVCSAPPS_G', 'Google Apps for Business', '0', 'Computer Software', true, 'EC Services'],
-    ['HARMONIA.IO', 'Harmonia - Monthly subscription', '0', 'Computer Software', true, 'Non-EC'],
-    ['SKY DIGITAL', 'Sky Digital - Broadband', '20', 'Internet & Telephone', true, 'Non-EC']
+    { 'textToMatch': 'CAMPFIRE', 'description': '37 Signals - Campfire', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'GITHUB.COM', 'description': 'GitHub - Monthly subscription', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'LINODE.COM', 'description': 'Linode - Monthly subscription - Linode 2048', 'vat': '0', 'category': 'Web Hosting', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'Non-Sterling Transaction Fee', 'description': 'Non Sterling Transaction Fee', 'vat': '0', 'category': 'Bank/Finance Charges', 'shouldHaveAttachment': false, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'Pact Coffee', 'description': 'Pact Coffee London', 'vat': '0', 'category': 'Sundries', 'shouldHaveAttachment': false, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'TOTAL CHARGES TO', 'description': 'HSBC - Monthly account maintenance fee', 'vat': '0', 'category': 'Bank/Finance Charges', 'shouldHaveAttachment': false, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'SVCSAPPS_G', 'description': 'Google Apps for Business', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'EC Services' },
+    { 'textToMatch': 'HARMONIA.IO', 'description': 'Harmonia - Monthly subscription', 'vat': '0', 'category': 'Computer Software', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' },
+    { 'textToMatch': 'SKY DIGITAL', 'description': 'Sky Digital - Broadband', 'vat': '20', 'category': 'Internet & Telephone', 'shouldHaveAttachment': true, 'ecStatus': 'Non-EC' }
   ]
 
   var tryToExplainTransaction = function() {
@@ -65,12 +65,12 @@
 
     if (unexplainedTransactionText) {
       $(rules).each(function(index, rule) {
-        var textToMatch = rule[0];
-        var description = rule[1];
-        var vat = rule[2];
-        var category = rule[3];
-        var shouldHaveAttachment = rule[4];
-        var ecStatus = rule[5];
+        var textToMatch = rule['textToMatch'];
+        var description = rule['description'];
+        var vat = rule['vat'];
+        var category = rule['category'];
+        var shouldHaveAttachment = rule['shouldHaveAttachment'];
+        var ecStatus = rule['ecStatus'];
 
         console.log('Testing: ' + textToMatch);
         if (unexplainedTransactionText.match(textToMatch)) {
