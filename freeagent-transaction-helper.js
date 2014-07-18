@@ -49,10 +49,9 @@
   }
 
   var tryToExplainTransaction = function() {
-    var unexplainedTransactionText = $('.transaction.unexplained').text();
-
     var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
     $.getJSON(rulesURL, function(rules) {
+      var unexplainedTransactionText = $('.transaction.unexplained').text();
       $(rules).each(function(index, rule) {
         return process(rule, unexplainedTransactionText);
       });
