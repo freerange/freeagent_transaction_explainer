@@ -55,22 +55,15 @@
       var rulesURL = 'https://rawgit.com/freerange/free_agent_transaction_explainer/master/rules.json';
       $.getJSON(rulesURL, function(rules) {
         $(rules).each(function(index, rule) {
-          var textToMatch = rule['textToMatch'];
-          var description = rule['description'];
-          var vat = rule['vat'];
-          var category = rule['category'];
-          var shouldHaveAttachment = rule['shouldHaveAttachment'];
-          var ecStatus = rule['ecStatus'];
+          console.log('Testing: ' + rule.textToMatch);
+          if (unexplainedTransactionText.match(rule.textToMatch)) {
+            console.log('Found: ' + rule.description);
 
-          console.log('Testing: ' + textToMatch);
-          if (unexplainedTransactionText.match(textToMatch)) {
-            console.log('Found: ' + description);
-
-            setVAT(vat);
-            setEcStatus(ecStatus);
-            setCategory(category);
-            setDescription(description);
-            if (shouldHaveAttachment) {
+            setVAT(rule.vat);
+            setEcStatus(rule.ecStatus);
+            setCategory(rule.category);
+            setDescription(rule.description);
+            if (rule.shouldHaveAttachment) {
               promptForAnAttachment();
             };
 
