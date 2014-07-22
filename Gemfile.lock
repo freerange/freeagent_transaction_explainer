@@ -16,3 +16,4 @@ PLATFORMS
 
 DEPENDENCIES
   jasmine
+  rake
