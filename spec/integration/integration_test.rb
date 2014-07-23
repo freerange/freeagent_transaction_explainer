@@ -25,7 +25,7 @@ class IntegrationTest < MiniTest::Unit::TestCase
   def test_should_explain_transaction
     visit "http://localhost:#{@server_port}/freeagent-unexplained-transaction.html"
     page.execute_script("window.rulesUrl = 'http://localhost:#{@server_port}/test-rules.json'")
-    page.execute_script(File.read('freeagent-transaction-helper.js'))
+    page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
 
     assert page.has_select?('purchase_sales_tax_rate', selected: '0')
     assert page.has_select?('spending_category', selected: 'Sundries')
