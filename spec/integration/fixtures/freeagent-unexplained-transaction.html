@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en" class="ie ie6"><![endif]-->
+<!--[if IE 7]><html xmlns:v="urn:schemas-microsoft-com:vml" lang="en" class="ie ie7"><![endif]-->
+<!--[if IE 8]><html xmlns:v="urn:schemas-microsoft-com:vml" lang="en" class="ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"331028711b","applicationID":"7739","transactionName":"e1hbFhZcDl4HRxcGU1ZcagMHUA1HDEFnAVxMRVwHFxwMVxU=","queueTime":0,"applicationTime":700,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQYFVEVUDwAJ"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="git-rev" content="51203d"/>
+<meta name="host" content="web4-gc" />
+  <meta content="SP-1112-01" name="tracker-key" /><meta content="Go Free Range Ltd" name="tracker-odn" /><meta content="2850" name="tracker-o" /><meta content="32469" name="tracker-u" />
+
+  <title>FreeAgent : Explain a Transaction</title>
+  
+  <link rel="Shortcut Icon" type="image/ico" href="/favicon.ico" />
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="F0ppz/rAbhgKOnfiTFuq3/Li0ubZzC6CVeoMtE1B0K8=" name="csrf-token" />
+  <meta content="GBP" name="native-currency" /><meta content="£" name="native-currency-unit" /><meta content="." name="native-currency-separator" /><meta content="," name="native-currency-delimiter" /><meta content="%u%n" name="native-currency-format" /><meta content="5MB" name="max-attachment-size-name" /><meta content="2009-01-01" name="freeagent-start-date" />
+
+  <link href="https://staticly.global.ssl.fastly.net/assets/talaria-c53ab10d40f2208b9675e38441484b4e.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="https://staticly.global.ssl.fastly.net/assets/talaria2-f0697eb82af5ac971a6bef161428526b.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="https://staticly.global.ssl.fastly.net/assets/talaria_enhancements-56306f3f197f828da719aa4cd0ae5651.css" media="all" rel="stylesheet" type="text/css" />
+
+  <link href="https://staticly.global.ssl.fastly.net/assets/reports_print-e3cec7a0bd34f444d8e1dad1e962ed67.css" media="print" rel="stylesheet" type="text/css" />
+
+  
+
+  
+
+
+  <!--[if IE]>
+    <link href="https://staticly.global.ssl.fastly.net/assets/talaria/ie-5d99289144a5a1c188f27441d44b563f.css" media="screen" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <script src="https://staticly.global.ssl.fastly.net/assets/talaria/html5-b0ff024751fa9760dc01b162866b3652.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <script src="https://staticly.global.ssl.fastly.net/assets/talaria-119092514e01074f0be6abb40840fc57.js" type="text/javascript"></script>
+  <script src="https://staticly.global.ssl.fastly.net/assets/talaria/highcharts-2e8014053bb2b40238f75f61b4996958.js" type="text/javascript"></script>
+</head>
+
+<body class="">
+  
+  
+  <div id="wrapper">
+    <div id="sidebar_saviour"></div>
+    <div id="header_wrapper">
+      <header id="header" role="banner">
+        
+        <div id="header_content">
+          <div id="company_name">
+              <a href="/">Go Free Range Ltd</a>
+          </div>
+          <nav id='primary_nav' role='navigation'>
+  <ul class='sf-menu'>
+      <li class="alpha"><a href="/">Overview</a></li>
+      <li><a href="/contacts">Contacts</a></li>
+
+      <li class="parent" id="work"><a href="/projects"><em>Work</em></a><ul><li><a href="/estimates">Estimates</a></li><li><a href="/projects">Projects</a></li><li><a href="/timeslips">Time Tracking</a></li><li class="omega"><a href="/invoices">Invoicing</a></li></ul></li>
+
+      <li><a href="/bills">Bills</a></li>
+
+        <li class="parent" id="my_money"><a href="/users/32469/expenses"><em>My Money</em></a><ul><li><a href="/users/32469/expenses">Expenses</a></li><li><a href="/my_money/32469/dividends">Dividends</a></li><li><a href="/my_money/32469/salary">Salary</a></li><li class="omega"><a href="/my_money/payroll/switch">Payroll</a></li></ul></li>
+
+      <li class="current"><a href="/bank_accounts">Banking</a></li>
+
+        <li class="parent" id="taxes"><a href="/tax/32469/self_assessment_returns"><em>Taxes</em></a><ul><li><a href="/tax/32469/self_assessment_returns">Self Assessment</a></li><li><a href="/tax/corporation_tax_returns">Corporation Tax</a></li><li><a href="/tax/paye">PAYE &amp; NI</a></li><li class="omega"><a href="/tax/vat_returns">VAT</a></li></ul></li>
+
+        <li class="parent last-child" id="accounting"><a href="/accounting"><em>Accounting</em></a><ul><li><a href="/accounting">Reports</a></li><li class="omega"><a href="/accounting/journal_entries">Journal Entries</a></li></ul></li>
+  </ul>
+</nav>
+
+          <nav id='account_navigation' role='navigation'>
+  <ul>
+    
+    
+        <li id="search-control">
+          <form accept-charset="UTF-8" action="/search" class="header_search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+            <input id="search-box" name="query" tabindex="1" type="text" />
+            <label for="search-box">Search</label>
+</form></li>            
+      <li class="files"><a href="/files">Files</a></li>
+      <li class="billing"><a href="/company/account">Billing</a></li>
+
+        <li class="settings"><a href="/settings/index">Settings</a></li>
+
+    <li class="logout"><a href="/logout">Logout</a></li>
+  </ul>
+</nav>
+
+        </div>
+</header>    </div>
+    <section id="main" role="main" data-pjax-container="true">
+      <header id="main_title">
+        <div id="main_title_content">
+          <div id="main_title_innards">
+            
+              <h1>
+                Explain a Transaction
+              </h1>
+              <div id="title_actions">
+                    <ul>
+        <li><a href="/bank_accounts/3442/bank_transactions/48737690" class="button delete" data-confirm="Are you sure?" data-method="delete" rel="nofollow"><span><em>Delete this Transaction</em></span></a></li>
+    </ul>
+
+              </div>
+          </div>
+        </div>
+      </header>
+      
+
+<section id="content">
+  <div id="contents">
+    <table class="flexi-table">
+  <tr>
+    <th class="td10">Date</th>
+    <th style="width:65%">Description</th>
+    <th class="td10 moneyth">Money In</th>
+    <th class="moneyth">Money Out</th>
+    <th class="action">&nbsp;</th>
+  </tr>
+  <tr class="odd">
+    <td class="date">02-07-2014</td>
+    <td class='transaction unexplained'>
+      PACT COFFEE LONDON//OTHER/&#163;6.95
+    </td>
+    <td class="money"></td>
+    <td class="money">6.95</td>
+    <td class="action">&nbsp;</td>
+  </tr>
+  <tr class="total">
+    <td colspan="2" class="num">Unexplained Balance</td>
+    <td class="money total">
+      <strong></strong>
+    </td>
+    <td class="money total">
+      <strong>6.95</strong>
+    </td>
+    <td class="action">&nbsp;</td>
+  </tr>
+</table>
+
+    <form accept-charset="UTF-8" action="/bank_accounts/3442/bank_account_entries" class="new_bank_account_entry" data-currency="GBP" data-direction="money_out" data-foreign_currency_invoice="false" data-foreign_currency_transfer="false" data-main_type="payment" data-sales_tax="true" enctype="multipart/form-data" id="bank_account_entry" method="post" name="entryform"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="F0ppz/rAbhgKOnfiTFuq3/Li0ubZzC6CVeoMtE1B0K8=" /></div>
+      <div style="padding:0 15px">
+        
+
+
+
+
+<input id="bank_account_entry_bank_transaction_id" name="bank_account_entry[bank_transaction_id]" type="hidden" value="48737690" />
+
+<input id="is_locked" name="is_locked" type="hidden" value="false" />
+
+<fieldset class="blockf">
+  <p class="required_note">
+    Fields marked with <strong class="required">*</strong> are required.
+  </p>
+  <h2>Select a Type</h2>
+  <p>
+    <label for="main_type">Type</label>
+    <select data-role="main_type" id="main_type" name="bank_account_entry[main_type]"><optgroup label="Money Out"><option value="Payment" selected="selected" data-direction="money_out" data-main_type="payment" data-sales_tax="true">Payment</option>
+<option value="Bill Payment" data-direction="money_out" data-main_type="bill">Bill Payment</option>
+<option value="Transfer to Another Account" data-direction="money_out" data-main_type="transfer">Transfer to Another Account</option>
+<option value="Money Paid to User" data-direction="money_out" data-main_type="user">Money Paid to User</option>
+<option value="Purchase of Capital Asset" data-direction="money_out" data-main_type="capital_asset" data-sales_tax="true">Purchase of Capital Asset</option>
+<option value="Payment of HP Agreement" data-direction="money_out" data-main_type="hp">Payment of HP Agreement</option>
+<option value="Other Money Out" data-direction="money_out" data-main_type="other" data-sales_tax="true">Other Money Out</option></optgroup><optgroup label="Money In"><option value="Sales" data-direction="money_in" data-main_type="sales" data-sales_tax="true">Sales</option>
+<option value="Transfer from Another Account" data-direction="money_in" data-main_type="transfer">Transfer from Another Account</option>
+<option value="Refund" data-direction="money_out" data-main_type="refund" data-sales_tax="true">Refund</option>
+<option value="Bill Refund" data-direction="money_in" data-main_type="bill">Bill Refund</option>
+<option value="Money Received from User" data-direction="money_in" data-main_type="user">Money Received from User</option>
+<option value="Disposal of Capital Asset" data-direction="money_in" data-main_type="capital_asset" data-sales_tax="true">Disposal of Capital Asset</option>
+<option value="Refund of HP Agreement Payment" data-direction="money_in" data-main_type="hp">Refund of HP Agreement Payment</option>
+<option value="Other Money In" data-direction="money_in" data-main_type="other">Other Money In</option></optgroup></select>
+  </p>
+
+    <input id="dated_on" name="bank_account_entry[dated_on]" type="hidden" value="2014-07-02" />
+
+  <p>
+    <label for="gross_value">Total Amount £
+      <strong class="required">*</strong>
+    </label>
+    <input class="right two_dp" data-currency="GBP" id="gross_value" name="bank_account_entry[gross_value]" size="9" type="text" value="6.95" />
+    <span class="money_out">  
+    <span class="sales_tax primary_sales_tax" data-type="preset">
+      &nbsp;inc
+      <select id="purchase_sales_tax_rate" name="bank_account_entry[sales_tax_rate]"><option value="-3.0" data-manual="true">Amount...</option>
+<option value="0.0">0</option>
+<option value="5.0">5</option>
+<option value="15.0">15</option>
+<option value="17.5">17.5</option>
+<option value="20.0">20</option>
+<option value="-1.0" selected="selected">Auto</option></select>
+      <span class="preset">%</span>
+      <span class="manual">
+        <strong class="required">*</strong>
+        £
+        <input class="right two_dp" id="purchase_sales_tax_amount" name="bank_account_entry[manual_sales_tax_amount]" size="8" type="text" value="0.07" />
+      </span>
+      VAT
+    </span>
+
+
+
+      <br />
+      <span class="form-info sales_tax">Select
+        <em>Auto VAT</em>
+        to use the normal VAT
+        rate for the category and entry date.
+      </span>
+</span>
+
+    <span class="money_in">
+    <span class="sales_tax">
+      &nbsp;inc
+      <select id="receipt_sales_tax_rate" name="bank_account_entry[sales_tax_rate]"><option value="0.0">0</option>
+<option value="5.0">5</option>
+<option value="15.0">15</option>
+<option value="17.5">17.5</option>
+<option value="20.0">20</option>
+<option value="-2.0">N/A</option></select>%
+      VAT
+      <br />
+      <span class="form-info">Select
+        <em>N/A</em>
+        if outside the scope of VAT.
+      </span>
+    </span>
+
+</span>
+
+  </p>
+  <p class="foreign_currency invoice_entry">
+  <label for="foreign_currency_value" id="foreign_currency_value_label">
+    <span id="foreign_currency_iso_code" data-role="foreign_currency_code">
+      
+    </span>
+    Value <strong class="required">*</strong>
+  </label>
+  <input class="right two_dp" data-role="foreign_currency_value" id="foreign_currency_value" name="bank_account_entry[foreign_currency_value]" size="9" type="text" value="0.0" />
+  <span class="form-info">
+    Enter how much this payment should settle in the original invoice currency.
+  </span>
+</p>
+
+<p class="foreign_currency transfer_entry">
+  <label for="transfer_value">
+    <span data-role="foreign_currency_code"></span>
+    Value <strong class="required">*</strong>
+  </label>
+  <input class="right two_dp currency_converted" data-currency-select="#transfer_bank_account_id" data-date-input="#dated_on" data-exchange-rate="1.0" data-foreign-value-input="#gross_value" data-toggle="#transfer_currency_conversion" disabled="disabled" id="transfer_value" name="bank_account_entry[transfer_value]" size="9" type="text" value="6.95" />
+    <input checked="checked" id="transfer_currency_conversion" name="automatic_currency_conversion" type="checkbox" value="1" />
+    <label class="inline" for="automatic_currency_conversion">Automatic Currency Conversion</label>
+    <span class="form-info money_out">
+      Enter the value received into <span data-role="transfer_bank_account_name"></span> if known.
+    </span>
+    <span class="form-info money_in">
+      Enter the value transferred from <span data-role="transfer_bank_account_name"></span> if known.
+    </span>
+</p>
+
+    <p id="ec_status_options" class="sales_tax"><label for="expense_ec_status">EC Status</label>
+    <input checked="checked" id="ec_status_non_ec" name="bank_account_entry[ec_status]" type="radio" value="" /><label class="inline" for="ec_status_non_ec">Non-EC</label>
+    <input id="ec_status_goods" name="bank_account_entry[ec_status]" type="radio" value="2" /><label class="inline" for="ec_status_goods">EC Goods</label>
+    <input id="ec_status_services" name="bank_account_entry[ec_status]" type="radio" value="1" /><label class="inline" for="ec_status_services">EC Services</label>
+    <span class="form-info">Select appropriate status for VAT reporting purposes</span>
+  </p>
+
+</fieldset>
+
+<fieldset class="blockf transfer_entry">
+  <h2 class="money_out">
+    Transfer from HSBC Current to which account?
+    <input id="transfer_out_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Transfer to Another Account" />
+  </h2>
+  <h2 class="money_in">
+    Transfer to HSBC Current from which account?
+    <input id="transfer_in_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Transfer from Another Account" />
+  </h2>
+  <p>
+    <label for="transfer_bank_account_id" class="money_out">To</label>
+    <label for="transfer_bank_account_id" class="money_in">From</label>
+    <select data-role="transfer_bank_account" id="transfer_bank_account_id" name="bank_account_entry[transfer_bank_account_id]"><option value="9276" data-currency="GBP">HSBC BMM (Office &amp; tax liabilities)</option>
+<option value="251204" data-currency="GBP">GFR Paypal</option>
+<option value="266184" data-currency="GBP">HSBC BMM (Alumni liabilities)</option></select>
+  </p>
+</fieldset>
+
+<fieldset class="blockf user_entry">
+  <h2 class="money_in">Choose who the money was paid in from, and why</h2>
+  <h2 class="money_out">Choose who was paid, and why</h2>
+  <p>
+    <label for="paid_user_id" class="money_in">Received from</label>
+    <label for="paid_user_id" class="money_out">Payment to</label>
+    <select id="paid_user_id" name="bank_account_entry[paid_user_id]"><option value="32469">Chris Roos</option>
+<option value="252551">Free Agent Admin</option>
+<option value="7474">James Mead</option>
+<option value="3835">James Andrews</option>
+<option value="3836">James Adam</option>
+<option value="7821">Jason Cale</option>
+<option value="7820">Kalvir Sandhu</option>
+<option value="7294">Luke Redpath</option>
+<option value="7822">Tom Ward</option></select>
+  </p>
+  <p class="money_in">
+    <label for="user_receipt_entry_type">Reason</label>
+    <select id="user_receipt_entry_type" name="bank_account_entry[entry_type]"><option value="Payment to Director Loan Account">Payment to Director Loan Account</option>
+<option value="Share Capital Introduced">Share Capital Introduced</option></select>
+  </p>
+  <p class="money_out">
+    <label for="user_payment_entry_type">Reason</label>
+    <select id="user_payment_entry_type" name="bank_account_entry[entry_type]"><option value="Smart User Payment">Smart User Payment</option>
+<option value="Net Salary and Bonuses">Net Salary and Bonuses</option>
+<option value="Benefit in Kind">Benefit in Kind</option>
+<option value="Expense Payment">Expense Payment</option>
+<option value="Dividend">Dividend</option>
+<option value="Payment from Director Loan Account">Payment from Director Loan Account</option></select>
+  </p>
+</fieldset>
+
+<fieldset class="blockf invoice_entry">
+  <h2 class="money_in">
+    Select an Invoice to allocate the money to
+    <input id="invoice_receipt_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Invoice Receipt" />
+  </h2>
+  <h2 class="money_out">
+    Select an Invoice or Credit Note to allocate the money to
+    <input id="credit_note_refund_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Credit Note Refund" />
+  </h2>
+  <p>
+    <label for="paid_invoice_id">Invoice
+      <strong class="required">*</strong>
+    </label>
+    <input class="autocomplete_input" data-bank-entry-date="2014-07-02" data-payment-added="false" data-selected-item="null" data-show-selected-item-in-results="true" id="paid_invoice_id" name="bank_account_entry[paid_invoice_id]" type="text" />
+  </p>
+</fieldset>
+
+<fieldset class="blockf bill_entry">
+  <h2 class="money_out">
+    Select a Bill to allocate the payment to
+    <input id="bill_payment_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Bill Payment" />
+  </h2>
+  <h2 class="money_in">
+    Select a Bill to allocate the refund to
+    <input id="bill_refund_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Bill Refund" />
+  </h2>
+  <p>
+    <label for="bank_account_entry_paid_bill_id">Bill
+      <strong class="required">*</strong>
+    </label>
+    <input class="autocomplete_input" data-payment-added="false" data-selected-item="null" data-show-selected-item-in-results="true" id="paid_bill_id" name="bank_account_entry[paid_bill_id]" type="text" />
+  </p>
+</fieldset>
+
+
+<fieldset class="blockf payment_entry sales_entry refund_entry stock_entry other_entry capital_asset_entry hp_entry">
+  <h2>More Detail</h2>
+  
+  <div class="payment_entry refund_entry">
+  <p>
+    <label for="spending_category">Category</label>
+    <select id="spending_category" name="bank_account_entry[nominal_code]"><optgroup label="Admin expenses (normally VATable)"><option value="285">Accommodation and Meals</option>
+<option value="292">Accountancy Fees</option>
+<option value="288">Advertising and Promotion</option>
+<option value="335">Business Entertaining</option>
+<option value="278">Childcare Vouchers</option>
+<option value="270">Computer Hardware</option>
+<option value="269">Computer Software</option>
+<option value="293">Consultancy Fees</option>
+<option value="202">Electricity Supply</option>
+<option value="273">Internet &amp; Telephone</option>
+<option value="291">Leasing Payments</option>
+<option value="290">Legal and Professional Fees</option>
+<option value="274">Mobile Phone</option>
+<option value="283" selected="selected">Motor Expenses</option>
+<option value="250">Office Costs</option>
+<option value="271">Office Equipment</option>
+<option value="201">Office Service Charge</option>
+<option value="272">Other Computer Costs</option>
+<option value="276">Printing</option>
+<option value="251">Rent</option>
+<option value="289">Staff Entertaining</option>
+<option value="282">Staff Training</option>
+<option value="277">Stationery</option>
+<option value="280">Sundries</option>
+<option value="268">Web Hosting</option></optgroup><optgroup label="Admin expenses (normally Zero-VAT)"><option value="363">Bank/Finance Charges</option>
+<option value="359">Books and Journals</option>
+<option value="200">Business Rates</option>
+<option value="360">Charitable Donations</option>
+<option value="372">Corporation Tax Penalty</option>
+<option value="364">Insurance</option>
+<option value="362">Interest Payable</option>
+<option value="373">PAYE/NI Penalty</option>
+<option value="351">Pension (Annuity)</option>
+<option value="350">Pension (Personal/Stakeholder)</option>
+<option value="358">Postage</option>
+<option value="361">Subscriptions</option>
+<option value="365">Travel</option>
+<option value="366">Use Of Home</option>
+<option value="371">VAT Penalty</option></optgroup><optgroup label="Cost of sales (normally VATable)"><option value="102">Commission Paid</option>
+<option value="101">Cost of Sales</option>
+<option value="104">Equipment Hire</option>
+<option value="103">Materials</option>
+<option value="150">Subcontractor Costs</option></optgroup><optgroup label="Taxes"><option value="820">Corporation Tax</option>
+<option value="814">PAYE/NI</option>
+<option value="817">VAT</option></optgroup></select>
+  </p>
+</div>
+<div class="sales_entry stock_entry money_in">
+  <p>
+      <input id="income_category" name="bank_account_entry[nominal_code]" type="hidden" value="001" />
+  </p>
+</div>
+
+  <div class="other_entry">
+  <p class="money_in">
+    <label for="other_receipt_entry_type">Category</label>
+    <select id="other_receipt_entry_type" name="bank_account_entry[entry_type]"><option value="Interest Received">Interest Received</option>
+<option value="Grant Income">Grant Income</option>
+<option value="PAYE/NI Online Filing Incentive Claimed">PAYE/NI Online Filing Incentive Claimed</option>
+<option value="Refund of Other Tax Received">Refund of Other Tax Received</option>
+<option value="Receipt from Initial Debtor">Receipt from Initial Debtor</option>
+<option value="Receipt into Contra Account">Receipt into Contra Account</option>
+<option value="Share Premium">Share Premium</option></select>
+  </p>
+  <p class="money_out">
+    <label for="other_payment_entry_type">Category</label>
+    <select id="other_payment_entry_type" name="bank_account_entry[entry_type]"><option value="Realized Currency Exchange Gain/Loss">Realized Currency Exchange Gain/Loss</option>
+<option value="Payment to Initial Creditor">Payment to Initial Creditor</option>
+<option value="Payment from Contra Account">Payment from Contra Account</option>
+<option value="Pension Creditor">Pension Creditor</option>
+<option value="Other Payroll Deductions">Other Payroll Deductions</option></select>
+  </p>
+</div>
+
+  <div class="capital_asset_entry">
+  <p class="money_out">
+    <label for="depreciation_schedule">Asset Life</label>
+    <select id="depreciation_schedule" name="bank_account_entry[depreciation_schedule]"><option value="2 Years">2 Years</option>
+<option value="3 Years" selected="selected">3 Years</option>
+<option value="4 Years">4 Years</option>
+<option value="5 Years">5 Years</option>
+<option value="7 Years">7 Years</option></select>
+  </p>
+  <p class="money_out">
+    <label for="purchase_of_capital_asset_entry_type">Asset Type</label>
+    <select id="purchase_of_capital_asset_entry_type" name="bank_account_entry[entry_type]"><option value="Other Capital Asset Purchase">Other Capital Asset Purchase</option>
+<option value="Computer Equipment Purchase">Computer Equipment Purchase</option>
+<option value="Fixtures and Fittings Purchase">Fixtures and Fittings Purchase</option>
+<option value="Motor Vehicle Purchase">Motor Vehicle Purchase</option></select>
+  </p>
+  <p class="money_in">
+    <label for="disposal_of_capital_asset_entry_type">Asset Type</label>
+    <select id="disposal_of_capital_asset_entry_type" name="bank_account_entry[entry_type]"><option value="Computer Equipment Disposal">Computer Equipment Disposal</option>
+<option value="Fixtures and Fittings Disposal">Fixtures and Fittings Disposal</option>
+<option value="Motor Vehicles Disposal">Motor Vehicles Disposal</option>
+<option value="Other Capital Asset Disposal">Other Capital Asset Disposal</option></select>
+  </p>
+</div>
+
+  <div class="hp_entry">
+  <div class="money_out">
+    <input id="hp_agreement_payment_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Payment of HP Agreement" />
+  </div>
+  <div class="money_in">
+    <input id="hp_agreement_refund_entry_type" name="bank_account_entry[entry_type]" type="hidden" value="Refund of HP Agreement Payment" />
+  </div>
+</div>
+
+  <p>
+    <label for="description">Description
+      <strong class="required">*</strong>
+    </label>
+    <input data-autocomplete-url="/bank_accounts/3442/bank_account_entries/auto_complete_for_bank_account_entry_description" id="description" name="bank_account_entry[description]" size="45" type="text" value="" />
+  </p>
+</fieldset>
+
+<fieldset class="blockf payment_entry refund_entry">
+  <h2>Optional References</h2>
+    
+<p>
+  <label for="bank_account_entry_project_id">Link to Project</label>
+  <select class="rebill" data-rebill_role="project" id="bank_account_entry_project_id" name="bank_account_entry[project_id]"><option value="">-- None --</option>
+<option value="595815" data-currency="£">FutureLearn Ltd: FutureLearn Video</option>
+<option value="631032" data-currency="£">FutureLearn Ltd: FutureLearn Video Extension</option>
+<option value="639649" data-currency="£">MakieLab: Doll printing process improvements</option></select>
+</p>
+<p class="rebill" data-rebill_role="options" style="display:none;">
+  <label for="bank_account_entry_rebill_type">Re-bill this Expense?</label>
+  <select class="rebill" data-rebill_role="type" id="bank_account_entry_rebill_type" name="bank_account_entry[rebill_type]"><option value="">-- No --</option>
+<option value="cost">At cost</option>
+<option value="markup">With percentage markup</option>
+<option value="price">At a specific price</option></select>
+  <span class="rebill" data-rebill_role="factor" style="display: none;">
+    of 
+    <span class="rebill" data-rebill_role="factor_prefix"></span>
+    <input class="nudge right" id="bank_account_entry_rebill_factor" name="bank_account_entry[rebill_factor]" size="9" type="text" />
+    <span class="rebill" data-rebill_role="factor_suffix"></span>
+</span></p>
+
+  <p>
+    <label for="bank_account_entry_receipt_reference">Receipt no </label>
+    <input id="bank_account_entry_receipt_reference" name="bank_account_entry[receipt_reference]" size="10" type="text" value="" />
+  </p>
+</fieldset>
+
+<div id="attachment_form">
+  
+<fieldset id="attachment_fieldset" class="blockf">
+  <h2>Attachment</h2>
+    <p>
+      <label for="attachment">Upload an attachment</label>
+      <input accept="" id="attachment_attachment" name="attachment[attachment]" type="file" />
+    </p>
+    <p><span class="form-info">Maximum file size is 5MB. Acceptable formats are: PDF, Word, Excel, TXT, PNG, GIF or JPG</span></p>
+
+  <p>
+    <label for="attachment_description">Attachment description</label>
+    <input id="attachment_description" name="attachment[description]" size="30" type="text" />
+  </p>
+</fieldset>
+
+</div>
+
+      </div>
+      <p id="transaction_submit" class="submitarea">
+        <input name="commit" type="submit" value="Create New Explanation" />
+        <a href="https://freerange.freeagent.com/bank_accounts/3442">Cancel</a>
+      </p>
+</form>  </div>
+</section>
+      
+    </section>
+  </div>
+
+  <footer id="footer" role="contentinfo">
+  <div id="footer_content">
+
+    <ul id="support_channels">
+      <li id="knowledge_base">
+        <h3>
+          <a href="/kb_modal" id="kb_modal_link">Knowledge Base</a>
+        </h3>
+        <p>Packed with articles, tutorials and video guides</p>
+      </li>
+      <li id="customer_support">
+        <h3>
+          <a href="http://www.freeagent.com/support" class="external-link" target="_blank">Customer Support</a>
+        </h3>
+        <p>Our superhero support team <a href="mailto:support@freeagent.com">support@freeagent.com</a></p>
+      </li>
+      <li id="community_discussion">
+        <h3>
+          <a href="http://community.freeagent.com/freeagent" class="external-link" target="_blank">Community Discussion</a>
+        </h3>
+        <p>Discuss your ideas, questions and issues in our user forum</p>
+      </li>
+    </ul>
+
+    <div id="things_we_have_to_say_so_we_dont_get_sued">
+      <a href="http://www.freeagent.com/" id="freeagent_logotype" title="Visit the FreeAgent website">FreeAgent</a>
+      <ul>
+        <li>
+          <a href="http://www.freeagent.com/privacy" class="external-link">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="http://www.freeagent.com/terms" class="external-link">Terms of Service</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+  
+  <script type="text/javascript">      try { Fa.multitouch() } catch (e) { };
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-599742-2']);
+      _gaq.push(['_setDomainName', 'freeagent.com']);
+      _gaq.push(['_setAllowLinker', true]);
+              _gaq.push(['_trackPageview']);
+
+            _gaq.push(['_setCustomVar', '2', 'User Type', 'Direct - Active', '1']);
+
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+  
+</body>
+</html>

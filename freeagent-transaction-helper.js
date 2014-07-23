@@ -49,9 +49,13 @@
   }
 
   var tryToExplainTransaction = function() {
-    chrome.storage.sync.get('rulesUrl', function(items) {
-      processRules(items.rulesUrl);
-    });
+    if (window.rulesUrl) {
+      processRules(window.rulesUrl);
+    } else {
+      chrome.storage.sync.get('rulesUrl', function(items) {
+        processRules(items.rulesUrl);
+      });
+    };
   }
 
   var processRules = function(rulesURL) {

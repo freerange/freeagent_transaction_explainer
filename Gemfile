@@ -4,4 +4,6 @@ gem 'jasmine'
 
 group :test do
   gem 'rake'
+  gem 'capybara'
+  gem 'poltergeist'
 end
