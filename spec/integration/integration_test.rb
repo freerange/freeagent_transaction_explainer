@@ -10,6 +10,7 @@ class IntegrationTest < MiniTest::Unit::TestCase
   include Capybara::DSL
 
   def setup
+    Capybara.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
     Capybara.current_driver = :poltergeist
     root = File.expand_path('../fixtures/', __FILE__)
     @server_port = 8000
