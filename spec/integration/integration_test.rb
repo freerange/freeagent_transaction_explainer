@@ -33,4 +33,12 @@ class IntegrationTest < MiniTest::Unit::TestCase
     assert page.has_checked_field?('Non-EC')
     assert page.has_text?('Now upload an attachment!')
   end
+
+  def test_should_inform_user_that_a_matching_rule_cannot_be_found
+    visit "http://localhost:#{@server_port}/freeagent-unexplained-transaction.html"
+    page.execute_script("window.rulesUrl = 'http://localhost:#{@server_port}/empty-test-rules.json'")
+    page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
+
+    assert page.has_text?('No matching rules found')
+  end
 end
