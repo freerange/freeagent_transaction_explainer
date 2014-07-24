@@ -12,6 +12,8 @@
 #
 src_files:
   - lib/freeagent-transaction-helper.js
+  - lib/jquery-2.1.1.min.js
+  - lib/jquery-ui-1.11.0.min.js
 
 # stylesheets
 #
