@@ -21,7 +21,7 @@ class IntegrationTest < MiniTest::Unit::TestCase
   end
 
   def test_should_explain_transaction
-    visit "http://#{@server.host}:#{@server.port}/freeagent-unexplained-transaction.html"
+    visit '/freeagent-unexplained-transaction.html'
     page.execute_script("window.rulesUrl = 'http://#{@server.host}:#{@server.port}/test-rules.json'")
     page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
 
@@ -33,7 +33,7 @@ class IntegrationTest < MiniTest::Unit::TestCase
   end
 
   def test_should_inform_user_that_a_matching_rule_cannot_be_found
-    visit "http://#{@server.host}:#{@server.port}/freeagent-unexplained-transaction.html"
+    visit '/freeagent-unexplained-transaction.html'
     page.execute_script("window.rulesUrl = 'http://#{@server.host}:#{@server.port}/empty-test-rules.json'")
     page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
 
