@@ -22,8 +22,7 @@ class IntegrationTest < MiniTest::Unit::TestCase
 
   def test_should_explain_transaction
     visit '/freeagent-unexplained-transaction.html'
-    page.execute_script("window.rulesUrl = 'http://#{@server.host}:#{@server.port}/test-rules.json'")
-    page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
+    page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)) + "FreeAgentTransactionHelper('http://#{@server.host}:#{@server.port}/test-rules.json')")
 
     assert page.has_select?('purchase_sales_tax_rate', selected: '0')
     assert page.has_select?('spending_category', selected: 'Sundries')
@@ -34,8 +33,7 @@ class IntegrationTest < MiniTest::Unit::TestCase
 
   def test_should_inform_user_that_a_matching_rule_cannot_be_found
     visit '/freeagent-unexplained-transaction.html'
-    page.execute_script("window.rulesUrl = 'http://#{@server.host}:#{@server.port}/empty-test-rules.json'")
-    page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
+    page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)) + "FreeAgentTransactionHelper('http://#{@server.host}:#{@server.port}/empty-test-rules.json')")
 
     assert page.has_text?('No matching rules found')
   end
