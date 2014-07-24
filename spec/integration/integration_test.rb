@@ -12,20 +12,17 @@ class IntegrationTest < MiniTest::Unit::TestCase
   def setup
     Capybara.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
     Capybara.current_driver = :poltergeist
-    root = File.expand_path('../fixtures/', __FILE__)
-    @server_port = 8000
-    @server = WEBrick::HTTPServer.new(:Port => @server_port, :DocumentRoot => root)
-    @thread = Thread.new { @server.start }
+    Capybara.app = Rack::Directory.new(File.expand_path('../fixtures/', __FILE__))
+    @server = Capybara::Server.new(Capybara.app).boot
   end
 
   def teardown
-    @server.shutdown
-    @thread = nil
+    @server = nil
   end
 
   def test_should_explain_transaction
-    visit "http://localhost:#{@server_port}/freeagent-unexplained-transaction.html"
-    page.execute_script("window.rulesUrl = 'http://localhost:#{@server_port}/test-rules.json'")
+    visit "http://#{@server.host}:#{@server.port}/freeagent-unexplained-transaction.html"
+    page.execute_script("window.rulesUrl = 'http://#{@server.host}:#{@server.port}/test-rules.json'")
     page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
 
     assert page.has_select?('purchase_sales_tax_rate', selected: '0')
@@ -36,8 +33,8 @@ class IntegrationTest < MiniTest::Unit::TestCase
   end
 
   def test_should_inform_user_that_a_matching_rule_cannot_be_found
-    visit "http://localhost:#{@server_port}/freeagent-unexplained-transaction.html"
-    page.execute_script("window.rulesUrl = 'http://localhost:#{@server_port}/empty-test-rules.json'")
+    visit "http://#{@server.host}:#{@server.port}/freeagent-unexplained-transaction.html"
+    page.execute_script("window.rulesUrl = 'http://#{@server.host}:#{@server.port}/empty-test-rules.json'")
     page.execute_script(File.read(File.expand_path('../../../lib/freeagent-transaction-helper.js', __FILE__)))
 
     assert page.has_text?('No matching rules found')
