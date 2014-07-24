@@ -33,3 +33,7 @@ We use [FreeAgent](http://www.freeagent.com/) to do our own accounting at [Free 
 [Check out the 5 second movie demo](https://docs.google.com/a/gofreerange.com/file/d/0Byppog2awIncRjVnd2M4THlzMVU/edit)
 
 *NOTE.* This video is of the older bookmarklet version. We plan to update it soon.
+
+## License
+
+The FreeAgent Transaction Explainer is released under the [MIT License](https://github.com/freerange/recap/blob/master/LICENSE).
