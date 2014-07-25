@@ -1,10 +1,7 @@
-require 'rake/testtask'
 require 'jasmine'
 load 'jasmine/tasks/jasmine.rake'
 
-task default: ['jasmine:ci', 'test:integration']
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
 
-Rake::TestTask.new('test:integration') do |t|
-  t.test_files = FileList['spec/integration/*_test.rb']
-  t.verbose = true
-end
+task default: ['jasmine:ci', 'spec']
