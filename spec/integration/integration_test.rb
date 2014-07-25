@@ -6,13 +6,14 @@ require 'bundler/setup'
 require 'capybara'
 require 'capybara/poltergeist'
 
+Capybara.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
+Capybara.current_driver = :poltergeist
+Capybara.app = Rack::Directory.new(File.expand_path('../fixtures/', __FILE__))
+
 class IntegrationTest < MiniTest::Unit::TestCase
   include Capybara::DSL
 
   def setup
-    Capybara.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
-    Capybara.current_driver = :poltergeist
-    Capybara.app = Rack::Directory.new(File.expand_path('../fixtures/', __FILE__))
     @server = Capybara::Server.new(Capybara.app).boot
   end
 
