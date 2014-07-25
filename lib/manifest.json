@@ -19,9 +19,5 @@
     "https://*.freeagent.com/bank_accounts/*/bank_account_entries/new?bank_transaction_id=*"
   ],
 
-  "web_accessible_resources": [
-    "rules.json"
-  ],
-
   "options_page": "options.html"
 }
