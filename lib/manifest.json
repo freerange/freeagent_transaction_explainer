@@ -25,7 +25,10 @@
   ],
 
   "page_action": {
-    "default_icon": "icon.png"
+    "default_icon": {
+      "19": "icon-19.png",
+      "38": "icon-38.png"
+    }
   },
 
   "commands": {
