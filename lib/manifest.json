@@ -9,6 +9,13 @@
     "persistent": false
   },
 
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery-2.1.1.min.js", "jquery-ui-1.11.0.min.js", "freeagent-transaction-helper.js"]
+    }
+  ],
+
   "page_action": {
     "default_icon": "icon.png"
   },
