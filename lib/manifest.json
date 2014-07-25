@@ -42,7 +42,9 @@
   "permissions": [
     "declarativeContent",
     "storage",
-    "https://*.freeagent.com/bank_accounts/*/bank_account_entries/new?bank_transaction_id=*"
+    "https://*.freeagent.com/bank_accounts/*/bank_account_entries/new?bank_transaction_id=*",
+    "http://*/",
+    "https://*/"
   ],
 
   "options_page": "options.html"

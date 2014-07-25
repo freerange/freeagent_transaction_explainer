@@ -14,13 +14,7 @@ We use [FreeAgent](http://www.freeagent.com/) to do our own accounting at [Free 
 
 * Click "Load unpacked extension" and choose the "lib" folder in your local copy of the repository.
 
-* Take a copy of rules.json from this repository, amend them as appropriate and host them somewhere publicly accessible.
-
-  * Serve the rules with the correct Content-Type of `application/json`.
-
-  * Serve the rules with the `Access-Control-Allow-Origin` CORS header set such that requests from *.freeagent.com are allowed.
-
-  * If you host your rules on GitHub then you can use a rawgit.com URL to access them with these headers set. *NOTE.* It looks as if rawgit.com sets a `Cache-Control: max-age=300` HTTP header and so you may have to wait up to 5 mins for a newly published version to be loaded by the browser.
+* Take a copy of rules.json from this repository, amend them as appropriate and host them somewhere publicly accessible (e.g. GitHub, GitHub Gist or AWS S3).
 
 * Configure the extension with the URL of the rules you're hosting, by using the "Options" link under chrome://extensions.
 
