@@ -2,6 +2,7 @@
   "manifest_version": 2,
 
   "name": "FreeAgent Transaction Explainer",
+  "description": "Specify rules to help consistently explain transactions in FreeAgent",
   "author": "developers@gofreerange.com",
   "version": "1.0",
 
