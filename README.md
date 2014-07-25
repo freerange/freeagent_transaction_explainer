@@ -34,6 +34,10 @@ We use [FreeAgent](http://www.freeagent.com/) to do our own accounting at [Free 
 
 *NOTE.* This video is of the older bookmarklet version. We plan to update it soon.
 
+## Keyboard shortcut
+
+You can also trigger the extension to explain a transaction using the keyboard shortcut which by default is `Command+E` on a Mac or `Ctrl+E` on a PC. You can change the key combination by clicking the [Keyboard Shortcuts](chrome://extensions/configureCommands) link at the bottom of the [Chrome Extensions](chrome://extensions) page and setting the "Activate the extension" value for "FreeAgent Transaction Explainer".
+
 ## License
 
 The FreeAgent Transaction Explainer is released under the [MIT License](https://github.com/freerange/recap/blob/master/LICENSE).

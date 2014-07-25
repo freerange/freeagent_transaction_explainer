@@ -22,6 +22,14 @@
     "default_icon": "icon.png"
   },
 
+  "commands": {
+    "_execute_page_action": {
+      "suggested_key": {
+        "default": "Ctrl+E"
+      }
+    }
+  },
+
   "permissions": [
     "declarativeContent",
     "storage",
