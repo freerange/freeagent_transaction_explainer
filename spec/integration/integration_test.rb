@@ -6,9 +6,11 @@ require 'bundler/setup'
 require 'capybara'
 require 'capybara/poltergeist'
 
-Capybara.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
-Capybara.current_driver = :poltergeist
-Capybara.app = Rack::Directory.new(File.expand_path('../fixtures/', __FILE__))
+Capybara.configure do |config|
+  config.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
+  config.current_driver = :poltergeist
+  config.app = Rack::Directory.new(File.expand_path('../fixtures/', __FILE__))
+end
 
 class IntegrationTest < MiniTest::Unit::TestCase
   include Capybara::DSL
