@@ -11,11 +11,11 @@ Capybara.configure do |config|
 end
 
 RSpec.describe 'integration', type: :feature do
-  before do
+  before(:all) do
     @server = Capybara::Server.new(Capybara.app).boot
   end
 
-  after do
+  after(:all) do
     @server = nil
   end
 
