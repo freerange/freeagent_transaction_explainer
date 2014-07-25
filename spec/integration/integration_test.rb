@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'webrick'
 
 require 'bundler/setup'
 
