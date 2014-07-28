@@ -1,6 +1,6 @@
 ## What's this?
 
-It's a Chrome Extension that automates some of the process of us explaining our transactions in FreeAgent.
+A Chrome Extension which explains FreeAgent transactions according to a set of customisable rules.
 
 ## Why?
 
