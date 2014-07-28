@@ -1,4 +1,4 @@
-describe('freeagent-transaction-helper', function() {
+describe('freeagent-transaction-explainer', function() {
   beforeEach(function() {
     var fixture = $('<div>').attr('id', 'fixture').css('display', 'none')
                   .append($('<div>').addClass('transaction unexplained').text('Pact Coffee'))
