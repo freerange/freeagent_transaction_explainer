@@ -1,6 +1,6 @@
 ## Description
 
-A Chrome Extension which explains FreeAgent transactions according to a set of customisable rules.
+A Chrome Extension which explains bank transactions in FreeAgent according to a set of customisable rules.
 
 ## Motivation
 
