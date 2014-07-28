@@ -14,7 +14,7 @@ task :zip_up_extension do
   cmds = []
   cmds << 'mkdir -p package'
   cmds << 'cd lib'
-  cmds << 'zip -q -r free_agent_transaction_explainer.zip *'
-  cmds << 'mv free_agent_transaction_explainer.zip ../package'
+  cmds << 'zip -q -r freeagent_transaction_explainer.zip *'
+  cmds << 'mv freeagent_transaction_explainer.zip ../package'
   system cmds.join(' && ')
 end
