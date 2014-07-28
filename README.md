@@ -2,6 +2,8 @@
 
 A Chrome Extension which explains bank transactions in FreeAgent according to a set of customisable rules.
 
+Note: This extension was developed by _Go Free Range Ltd_ which is not affiliated to _FreeAgent Central Ltd_ and we do not mean to imply that they endorse it in any way.
+
 ## Motivation
 
 We use [FreeAgent](http://www.freeagent.com/) to do our book-keeping at [Free Range](http://gofreerange.com/). We have a number of recurring transactions (e.g. monthly subscription to GitHub) that we want to explain in the same way, and manually copying the values from the previously explained transaction is time consuming. Documenting those rules in executable code is much better.
@@ -26,7 +28,7 @@ We use [FreeAgent](http://www.freeagent.com/) to do our book-keeping at [Free Ra
 
 [Check out the 5 second movie demo](https://docs.google.com/a/gofreerange.com/file/d/0Byppog2awIncRjVnd2M4THlzMVU/edit)
 
-*NOTE.* This video is of the older bookmarklet version. We plan to update it soon.
+Note: This video is of the older bookmarklet version. We plan to update it soon.
 
 You can also trigger the extension to explain a transaction using the keyboard shortcut which by default is `Command+E` on a Mac or `Ctrl+E` on a PC. You can change the key combination by clicking the [Keyboard Shortcuts](chrome://extensions/configureCommands) link at the bottom of the [Chrome Extensions](chrome://extensions) page and setting the "Activate the extension" value for "FreeAgent Transaction Explainer".
 
