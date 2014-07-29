@@ -17,4 +17,6 @@ task :zip_up_extension do
   cmds << 'zip -q -r freeagent_transaction_explainer.zip *'
   cmds << 'mv freeagent_transaction_explainer.zip ../package'
   system cmds.join(' && ')
+
+  puts "All done. You'll find the zipped extension in the ./package directory"
 end
