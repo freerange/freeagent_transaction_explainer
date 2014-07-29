@@ -1,4 +1,4 @@
-## Description [![build status](https://secure.travis-ci.org/freerange/freeagent_transaction_explainer.png)](https://secure.travis-ci.org/freerange/freeagent_transaction_explainer)
+## FreeAgent Transaction Explainer [![build status](https://secure.travis-ci.org/freerange/freeagent_transaction_explainer.png)](https://secure.travis-ci.org/freerange/freeagent_transaction_explainer)
 
 A Chrome Extension which explains bank transactions in FreeAgent according to a set of customisable rules.
 
