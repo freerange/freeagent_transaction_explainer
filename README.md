@@ -12,7 +12,23 @@ We use [FreeAgent](http://www.freeagent.com/) to do our book-keeping at [Free Ra
 
 * [Install the extension](https://chrome.google.com/webstore/detail/freeagent-transaction-exp/lgpgdkoopbcppnipcnbodcobjmhagmim?hl=en&gl=GB) from the Chrome Web Store.
 
-* Take a copy of rules.json from this repository, amend them as appropriate and host them somewhere publicly accessible (e.g. GitHub, GitHub Gist or AWS S3).
+* Take a copy of rules.json from this repository, amend them as appropriate and host them somewhere publicly accessible (e.g. GitHub, GitHub Gist or AWS S3). The rules JSON should be an array of rule objects like this:
+
+```javascript
+{
+  "textToMatch": "GITHUB.COM", // used to match the bank transaction description
+
+  // if the rule matches then the following properties come into play:-
+
+  "description": "GitHub - Monthly subscription", // used to set the explanation Description
+  "category": "Computer Software", // used to set the Category
+
+  "vat": "0", // used to set the VAT rate
+  "ecStatus": "Non-EC", // used to set the EC Status
+
+  "shouldHaveAttachment": true // used to decide whether to prompt the user to upload an attachment
+}
+```
 
 * Configure the extension with the URL of the rules you're hosting, by using the "Options" link under chrome://extensions.
 
