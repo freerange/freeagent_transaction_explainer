@@ -40,6 +40,8 @@ You can also trigger the extension to explain a transaction using the keyboard s
 
 * Configure the extension with the URL of the rules you're hosting, by using the "Options" link under chrome://extensions.
 
+* To run all the specs, run `bundle install` followed by `rake`.
+
 ## License
 
 © 2014 Go Free Range Ltd.
