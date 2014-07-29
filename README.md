@@ -10,11 +10,7 @@ We use [FreeAgent](http://www.freeagent.com/) to do our book-keeping at [Free Ra
 
 ## Installation
 
-* Clone this repository.
-
-* Enable Developer mode in chrome://extensions.
-
-* Click "Load unpacked extension" and choose the "lib" folder in your local copy of the repository.
+* [Install the extension](https://chrome.google.com/webstore/detail/freeagent-transaction-exp/lgpgdkoopbcppnipcnbodcobjmhagmim?hl=en&gl=GB) from the Chrome Web Store.
 
 * Take a copy of rules.json from this repository, amend them as appropriate and host them somewhere publicly accessible (e.g. GitHub, GitHub Gist or AWS S3).
 
@@ -31,6 +27,18 @@ We use [FreeAgent](http://www.freeagent.com/) to do our book-keeping at [Free Ra
 Note: This video is of the older bookmarklet version. We plan to update it soon.
 
 You can also trigger the extension to explain a transaction using the keyboard shortcut which by default is `Command+E` on a Mac or `Ctrl+E` on a PC. You can change the key combination by clicking the [Keyboard Shortcuts](chrome://extensions/configureCommands) link at the bottom of the [Chrome Extensions](chrome://extensions) page and setting the "Activate the extension" value for "FreeAgent Transaction Explainer".
+
+## Development
+
+* Clone this repository.
+
+* Enable Developer mode in chrome://extensions.
+
+* Click "Load unpacked extension" and choose the "lib" folder in your local copy of the repository.
+
+* Take a copy of rules.json from this repository, amend them as appropriate and host them somewhere publicly accessible (e.g. GitHub, GitHub Gist or AWS S3).
+
+* Configure the extension with the URL of the rules you're hosting, by using the "Options" link under chrome://extensions.
 
 ## License
 
