@@ -1,7 +1,7 @@
 [
   { "textToMatch": "CAMPFIRE", "description": "37 Signals - Campfire", "vat": "0", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "GITHUB.COM", "description": "GitHub - Monthly subscription", "vat": "0", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
-  { "textToMatch": "LINODE.COM", "description": "Linode - Monthly subscription - Linode 2048", "vat": "0", "category": "Web Hosting", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
+  { "textToMatch": "LINODE.COM", "description": "Linode - Monthly subscription - Linode 1024", "vat": "0", "category": "Web Hosting", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "Non-Sterling Transaction Fee", "description": "Non Sterling Transaction Fee", "vat": "0", "category": "Bank/Finance Charges", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
   { "textToMatch": "Pact Coffee", "description": "Pact Coffee London", "vat": "0", "category": "Sundries", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
   { "textToMatch": "TOTAL CHARGES TO", "description": "HSBC - Monthly account maintenance fee", "vat": "0", "category": "Bank/Finance Charges", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
