@@ -8,5 +8,6 @@
   { "textToMatch": "SVCSAPPS_G", "description": "Google Apps for Business", "vat": "0", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "EC Services" },
   { "textToMatch": "HARMONIA.IO", "description": "Harmonia - Monthly subscription", "vat": "0", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "SKY DIGITAL", "description": "Sky Digital - Broadband", "vat": "Auto", "category": "Internet & Telephone", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
-  { "textToMatch": "HMRC NDDS", "description": "HMRC - PAYE/NI", "vat": "Auto", "category": "PAYE/NIL", "shouldHaveAttachment": false, "ecStatus": "Non-EC" }
+  { "textToMatch": "HMRC NDDS", "description": "HMRC - PAYE/NI", "vat": "Auto", "category": "PAYE/NIL", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
+  { "textToMatch": "Amazon Web Service", "description": "Amazon Web Services", "vat": "0", "category": "Web Hosting", "shouldHaveAttachment": true, "ecStatus": "Non-EC" }
 ]
