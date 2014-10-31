@@ -21,12 +21,7 @@ RSpec.describe 'integration', type: :feature do
 
   it 'explains transaction', :js do
     visit '/freeagent-unexplained-transaction.html'
-    page.execute_script(
-      File.read(File.expand_path('../../../lib/jquery-2.1.1.min.js', __FILE__)) +
-      File.read(File.expand_path('../../../lib/jquery-ui-1.11.0.min.js', __FILE__)) +
-      File.read(File.expand_path('../../../lib/freeagent-transaction-explainer.js', __FILE__)) +
-      "FreeAgentTransactionHelper('http://#{@server.host}:#{@server.port}/test-rules.json')"
-    )
+    execute_freeagent_transaction_helper_in_page('/test-rules.json')
 
     expect(page).to have_select('purchase_sales_tax_rate', selected: '0')
     expect(page).to have_select('spending_category', selected: 'Sundries')
@@ -37,13 +32,20 @@ RSpec.describe 'integration', type: :feature do
 
   it 'informs user that a matching rule cannot be found', :js do
     visit '/freeagent-unexplained-transaction.html'
+    execute_freeagent_transaction_helper_in_page('/empty-test-rules.json')
+
+    expect(page).to have_text('No matching rules found')
+  end
+
+  private
+
+  def execute_freeagent_transaction_helper_in_page(rules_path)
+    rules_url = "http://#{@server.host}:#{@server.port}#{rules_path}"
     page.execute_script(
       File.read(File.expand_path('../../../lib/jquery-2.1.1.min.js', __FILE__)) +
       File.read(File.expand_path('../../../lib/jquery-ui-1.11.0.min.js', __FILE__)) +
       File.read(File.expand_path('../../../lib/freeagent-transaction-explainer.js', __FILE__)) +
-      "FreeAgentTransactionHelper('http://#{@server.host}:#{@server.port}/empty-test-rules.json')"
+      "FreeAgentTransactionHelper('#{rules_url}')"
     )
-
-    expect(page).to have_text('No matching rules found')
   end
 end
