@@ -2,6 +2,11 @@ describe('freeagent-transaction-explainer', function() {
   beforeEach(function() {
     var fixture = $('<div>').attr('id', 'fixture').css('display', 'none')
                   .append($('<div>').addClass('transaction unexplained').text('Pact Coffee'))
+                  .append($('<select id="purchase_sales_tax_rate"><option>0%</option></select>'))
+                  .append($('<input id="ec_status_non_ec"/>'))
+                  .append($('<p id="ec_status_options"/>'))
+                  .append($('<select id="spending_category"><option>Sundries</option></select>'))
+                  .append($('<input id="description"/>'))
                   .append($('<div>').attr('id', 'attachment_form')
                     .append($('<h2>').text('Attachment')));
 
