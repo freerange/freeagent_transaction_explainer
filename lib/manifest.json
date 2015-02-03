@@ -4,7 +4,7 @@
   "name": "FreeAgent Transaction Explainer",
   "description": "Specify rules to help consistently explain transactions in FreeAgent",
   "author": "developers@gofreerange.com",
-  "version": "0.1",
+  "version": "0.2",
 
   "background": {
     "scripts": ["background.js"],
