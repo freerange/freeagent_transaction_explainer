@@ -9,7 +9,7 @@ describe('freeagent-transaction-explainer', function() {
   });
 
   it('displays a message when no attachment is required', function() {
-    var rules = [{ "textToMatch": "Pact Coffee", "description": "Pact Coffee London", "vat": "0", "category": "Sundries", "shouldHaveAttachment": false, "ecStatus": "Non-EC" }];
+    var rules = [{ "textToMatch": "Pact Coffee", "description": "Pact Coffee London", "vat": "0%", "category": "Sundries", "shouldHaveAttachment": false, "ecStatus": "Non-EC" }];
     $.getJSON = function(url, callback) {
       callback(rules);
       return {fail: function() {}};
