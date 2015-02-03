@@ -23,7 +23,7 @@ RSpec.describe 'integration', type: :feature do
     visit '/freeagent-unexplained-transaction.html'
     execute_freeagent_transaction_helper_in_page('/test-rules.json')
 
-    expect(page).to have_select('purchase_sales_tax_rate', selected: '0')
+    expect(page).to have_select('purchase_sales_tax_rate', selected: '0%')
     expect(page).to have_select('spending_category', selected: 'Sundries')
     expect(page).to have_field('description', with: 'Pact Coffee London')
     expect(page).to have_checked_field('Non-EC')
