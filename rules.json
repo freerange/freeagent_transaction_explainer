@@ -11,7 +11,5 @@
   { "textToMatch": "HMRC NDDS", "description": "HMRC - PAYE/NI", "vat": "Auto", "category": "PAYE/NIL", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
   { "textToMatch": "Amazon Web Service", "description": "Amazon Web Services", "vat": "0%", "category": "Web Hosting", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "Amazon web service", "description": "Amazon Web Services", "vat": "0%", "category": "Web Hosting", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
-  { "textToMatch": "L&G FPF", "description": "James Mead - Personal pension", "vat": "Auto", "category": "Pension (Personal/Stakeholder)", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
-  { "textToMatch": "TYPEKIT", "description": "Typekit - Yearly subscription for GFR", "vat": "0%", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
-  { "textToMatch": "AEGON SIPP SETTLEM", "description": "Chris Roos - Personal Pension", "vat": "Auto", "category": "Pension (Personal/Stakeholder)", "shouldHaveAttachment": false, "ecStatus": "Non-EC" }
+  { "textToMatch": "TYPEKIT", "description": "Typekit - Yearly subscription for GFR", "vat": "0%", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "Non-EC" }
 ]
