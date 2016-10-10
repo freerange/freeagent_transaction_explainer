@@ -6,6 +6,7 @@
   { "textToMatch": "PACTCOFFEE", "description": "Pact Coffee London", "vat": "0%", "category": "Sundries", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
   { "textToMatch": "TOTAL CHARGES TO", "description": "HSBC - Monthly account maintenance fee", "vat": "0%", "category": "Bank/Finance Charges", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
   { "textToMatch": "SVCSAPPS_G", "description": "Google Apps for Business", "vat": "0%", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "EC Services" },
+  { "textToMatch": "SVCSAPPS_g", "description": "Google Apps for Business", "vat": "0%", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "EC Services" },
   { "textToMatch": "HARMONIA", "description": "Harmonia - Monthly subscription", "vat": "0%", "category": "Computer Software", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "SKY DIGITAL", "description": "Sky Digital - Broadband", "vat": "Auto", "category": "Internet & Telephone", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "HMRC NDDS", "description": "HMRC - PAYE/NI", "vat": "Auto", "category": "PAYE/NIL", "shouldHaveAttachment": false, "ecStatus": "Non-EC" },
