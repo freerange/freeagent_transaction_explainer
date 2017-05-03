@@ -16,5 +16,5 @@
   { "textToMatch": "RUBYTOGETHER", "description": "Ruby Together - Monthly donation ($2) to Mocha open-source project", "vat": "0%", "category": "Charitable Donations", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "HEROKU", "description": "Heroku - Monthly subscription", "vat": "0%", "category": "Web Hosting", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
   { "textToMatch": "FREEAGENT CENTRAL", "description": "FreeAgent - Annual subscription", "vat": "Auto", "category": "Accountancy Fees", "shouldHaveAttachment": true, "ecStatus": "Non-EC" },
-  { "textToMatch": "ESSELCO OFFICE", "description": "The Office Group - Lounge Membership fee (DD/MM/YY - DD/MM/YY)", "vat": "Auto", "category": "Rent", "shouldHaveAttachment": true, "ecStatus": "Non-EC" }
+  { "textToMatch": "ESSELCO OFFICE", "description": "The Office Group - 3 x Co-working Membership fee (DD/MM/YY - DD/MM/YY)", "vat": "Auto", "category": "Rent", "shouldHaveAttachment": true, "ecStatus": "Non-EC" }
 ]
