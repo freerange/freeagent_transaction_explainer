@@ -30,6 +30,14 @@ RSpec.describe 'integration', type: :feature do
     expect(page).to have_text('Now upload an attachment!')
   end
 
+  it 'explains transaction with manual VAT amount', :js do
+    visit '/freeagent-unexplained-transaction.html'
+    execute_freeagent_transaction_helper_in_page('/test-rules-manual-vat.json')
+
+    expect(page).to have_select('purchase_sales_tax_rate', selected: 'Amount...')
+    expect(page).to have_field('purchase_sales_tax_amount', with: '???')
+  end
+
   it 'informs user that a matching rule cannot be found', :js do
     visit '/freeagent-unexplained-transaction.html'
     execute_freeagent_transaction_helper_in_page('/test-rules-empty.json')
