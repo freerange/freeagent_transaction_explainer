@@ -30,6 +30,8 @@ We use [FreeAgent](http://www.freeagent.com/) to do our book-keeping at [Free Ra
 }
 ```
 
+* If you are a member of Go Free Range, you will want to use the `rules.json` file in the `master` branch of this repo which is available from this URL (via GitHub Pages): https://freerange.github.io/freeagent_transaction_explainer/rules.json
+
 * Configure the extension with the URL of the rules you're hosting, by using the "Options" link under chrome://extensions.
 
 ## Usage
