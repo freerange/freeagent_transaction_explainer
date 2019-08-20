@@ -5,7 +5,7 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 
 Capybara.configure do |config|
-  config.save_and_open_page_path = File.expand_path('../../../tmp/capybara/', __FILE__)
+  config.save_path = File.expand_path('../../../tmp/capybara/', __FILE__)
   config.javascript_driver = :poltergeist
   config.app = Rack::Directory.new(File.expand_path('../fixtures/', __FILE__))
 end
